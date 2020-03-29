@@ -1,10 +1,13 @@
 def isPrime(n):
     """ Confirm n is prime number or not """
-    ans=True
-    for i in range(2,n):
-        if n % i == 0:
-            ans=False
-            break
+    if  n == 1:
+        ans=True
+    else:
+        ans=True
+        for i in range(2,n):
+            if n % i == 0:
+                ans=False
+                break
     return ans
 def PrimeInRange(min=1,max=100,isprint=True):
     """ List prime numbers in min and max range """
