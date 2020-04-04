@@ -6,7 +6,7 @@ def func(n):
 #------------------------------------------------
 number_str= input('So: ')
 try:
-    number=int(number_str)
+    number=int(eval(number_str))
     if number <=0:
         print('Not positive integer!')
     elif number==1 or number==2:
