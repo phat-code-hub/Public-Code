@@ -12,6 +12,6 @@ try:
     elif number==1 or number==2:
         print(1)
     else :
-        print(func(int(number))) 
+        print(func(number)) 
 except:
     print('Invalid number')
