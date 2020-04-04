@@ -6,8 +6,10 @@ def func(n):
 number= input('So: ')
 try:
     if number.isdecimal:
-        if int(number)>=0:
-            print(func(int(number)))
+        if int(number)==1 or int(number)==2:
+            print(1)
+        elif int(number)>2:
+            print(func(int(number))) 
         else:
             print('Negative number')
 except:
