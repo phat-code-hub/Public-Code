@@ -1,14 +1,14 @@
 import math
-import re
-reg0=re.compile(r'[0-9.]+')
-reg=re.compile(r'(\d)+.?(\d){3}')
-num_str=input('so: ').strip()
-m=reg0.match(num_str)
-if m:
-    number=float(m.group())
-    square=reg.match(str(number**2)).group()
-    root=reg.match(str(math.sqrt(number))).group()
-    print(square)
-    print(root)
-else:
+num=input('So: ').strip()
+try:
+    number=float(num)
+    square=str(round(number**2,3))
+    root=str(round(math.sqrt(number),3))
+    chk_list=[n for n in square if n !='.' and n !='0']
+    chk=[n in root for n in chk_list]
+    if  any(chk):
+        print('true')
+    else:
+        print('false')
+except:
     print('Invalid Number')
