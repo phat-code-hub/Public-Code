@@ -5,6 +5,6 @@ UNIT_PRICE=5.00 #Paint unit price
 try:
     color_number=int(input('number: '))
     total=(FIX_COST+UNIT_PRICE*color_number)*TAX
-    print(math.floor(total))
+    print(round(total))
 except :
     pass

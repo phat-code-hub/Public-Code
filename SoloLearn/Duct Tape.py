@@ -7,8 +7,9 @@ def Total_area(height,width):
 door_height=int(input('height: '))
 door_width=int(input('width: '))
 door_area=Total_area(door_height,door_width)
-# if door_area % tape_surface_area ==0 :
-#     tape_to_buy=math.floor(door_area//tape_surface_area)
-# else:
-tape_to_buy=(math.floor(door_area//tape_surface_area)+1)*2 # for 2 side of door
+# for 2 side of door
+if door_area % tape_surface_area ==0 :
+    tape_to_buy=door_area//tape_surface_area*2
+else:
+    tape_to_buy=(math.floor(door_area//tape_surface_area)+1)*2 
 print(tape_to_buy)
