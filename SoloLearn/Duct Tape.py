@@ -9,7 +9,7 @@ door_width=int(input('width: '))
 door_area=Total_area(door_height,door_width)
 # for 2 side of door
 if door_area % tape_surface_area ==0 :
-    tape_to_buy=door_area//tape_surface_area*2
+    tape_to_buy=round(door_area//tape_surface_area)*2
 else:
     tape_to_buy=(math.floor(door_area//tape_surface_area)+1)*2 
 print(tape_to_buy)
