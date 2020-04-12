@@ -3,4 +3,4 @@ def Area(info):
     return float(height)*float(width)
 apartA=input("A:")
 apartB=input("B:")
-print("apartment A" if Area(apartA)>=Area(apartB) else 'apartment B')
+print("Apartment A" if Area(apartA)>=Area(apartB) else 'Apartment B')
