@@ -1,4 +1,5 @@
 from collections import Counter
+
 def checkNumber(word):
     return len(word)==4 and len(Counter(word))>1
 def getResult(str_of_number):
