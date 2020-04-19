@@ -16,7 +16,7 @@ def Convert_Num_toString(data):
     words=data.split()
     converted_phrase=''
     for w in words:
-        if not w.isalpha():
+        if not w.isalpha(): # have decimal letter
             w=str(int(w)) # remove cases like '01'
         for k in table:
             if k in w:
