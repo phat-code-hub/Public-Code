@@ -8,6 +8,7 @@ number_str= input('So: ')
 try:
     number=int(number_str)
     assert number>=3
+    for i in range(3,number+1):
         res=func(i)
         Q_list.append(res)
     # print(Q_list)
