@@ -1,17 +1,16 @@
+Q_list=[1,1]
 def func(n):
-    if (n==1 ) or (n==2):
-        return 1
-    else:
-        return func(n-func(n-1))+func(n-func(n-2))
+    n_1=n-Q_list[n-2]
+    n_2=n-Q_list[n-3]
+    return Q_list[n_1-1]+Q_list[n_2-1]
 #------------------------------------------------
 number_str= input('So: ')
 try:
-    number=int(eval(number_str))
-    if number <=0:
-        print('Not positive integer!')
-    elif number==1 or number==2:
-        print(1)
-    else :
-        print(func(number)) 
+    number=int(number_str)
+    assert number>=3
+        res=func(i)
+        Q_list.append(res)
+    # print(Q_list)
+    print(Q_list[-1])
 except:
     print('Invalid number')
