@@ -11,8 +11,8 @@ try:
         nums=[]
         for n in range(length):
             num=input('So: ').strip()
-            if num.isdecimal():
-                nums.append(num)
+            if num.isdecimal() and num!='':
+                nums.append(int(num))
             else:
                 break
         if len(nums)<(length//2):
