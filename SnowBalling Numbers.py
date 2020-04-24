@@ -1,4 +1,3 @@
-length=0
 def check(data):
     total=data[0]
     chk=[]
@@ -7,7 +6,6 @@ def check(data):
         total+=data[n]
     return all(chk)
 try:
-    ans=True
     length=int(input('length :'))
     if length>1:
         nums=[]
@@ -16,13 +14,12 @@ try:
             if num.isdecimal():
                 nums.append(num)
             else:
-                ans=False
                 break
-        if ans:
+        if len(nums)>=length//2:
             print('true' if check(nums) else 'false')
         else:
             print('false')
     else:
-        print('length must be >1')
+        print('false')
 except :
     print('Invalid numbers')
