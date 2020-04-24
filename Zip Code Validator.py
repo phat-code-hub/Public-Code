@@ -1,9 +1,8 @@
-import re
-reg=re.compile(r'(\d){5}')
 code=input('Code:').strip()
-m=reg.match(code)
-if m:
-    ans='true'
+if len(code) != 5:
+    print('false')
 else:
-    ans='false'
-print(ans)
+    if code.isdecimal():
+        print('true')
+    else:
+        print('false')
