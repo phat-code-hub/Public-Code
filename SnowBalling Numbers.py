@@ -15,10 +15,13 @@ try:
                 nums.append(num)
             else:
                 break
-        if len(nums)>=length//2:
-            print('true' if check(nums) else 'false')
-        else:
+        if len(nums)<(length//2):
             print('false')
+        else:
+            if check(nums):
+                print('true')
+            else:
+                print('false')
     else:
         print('false')
 except :
