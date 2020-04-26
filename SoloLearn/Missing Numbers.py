@@ -13,7 +13,7 @@ try:
     origin={n for n in range(num_array[0],num_array[-1]+1)}
     dif=list(origin-nums)
     differ=list(map(str,dif))
-    differ=sorted(differ)
+    differ=sorted(differ,key=int)
     print(' '.join(differ))
 except :
     print('Invalid')
