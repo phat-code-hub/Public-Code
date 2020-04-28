@@ -1,12 +1,5 @@
 import numpy as np
 array=[]
-def check(data):
-    global array
-    dat=data
-    array=analyse(dat)
-    sums=[sum(a) for a in array]
-    sub=[n-sums[0]== 0 for n in sums]
-    return all(sub),sums[0]
 def analyse(darray):
     array_list=darray
     arr=np.array(darray)
@@ -17,19 +10,41 @@ def analyse(darray):
     array_list.append(dia1)
     array_list.append(dia2)
     return array_list
+def check(data):
+    global array
+    dat=data
+    array=analyse(dat)
+    sums=[sum(a) for a in array]
+    sub=[n-sums[0]== 0 for n in sums]
+    return all(sub),sums[0]
+
 def divideArray(code):
     global array
-    if code<3:
-        pass
+    size=(len(array)-2)//2
+    matrix_attr=['Rows','Columns','Diagonals']
+    arrs=[]
+    if code==0:
+        down=0
+        up=size
+    elif code == 1:
+        down=size
+        up=size*2
     else:
-        pass
+        down=size*2
+        up=size*2+2
+    attr_name=matrix_attr[code]
+    for n in range(down,up):
+        arr=list(map(str,array[n]))
+        arrs.append(' + '.join(arr))
+    res=' = '.join(arrs)
+    return res,attr_name
 def show(res,sums):
     global array
     if answer:
         print('It is a magic square with the magic sum {0}'.format(sums))
-        for i in range(2):
-            ans1,ans2,ans3,name=divideArray(i)
-
+        for i in range(3):
+            expr,name=divideArray(i)
+            print('{0} = {1} ({2}) '.format(expr,sums,name))
     else:
         print('it is not a magic square.')
 nums=[]
