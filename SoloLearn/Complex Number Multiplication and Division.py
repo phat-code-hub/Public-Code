@@ -5,7 +5,7 @@
 #    =(a1*b1-a1*b2j+a2j*b1-a2j*b2j)/(b1^2-b2^2*j^2)
 #    =[(a1*b1+a2*b2)-(a1*b2-a2*b1)j]/(b1^2+b2^2)
 # => real_part of A/B : (a1*b1+a2*b2)/(b1^2+b2^2)
-#    imagine_part of A/B : -(a1*b2-a2*b1)/(b1^2+b2^2)
+#    imaginary_part of A/B : -(a1*b2-a2*b1)/(b1^2+b2^2)
 #Note : This Code uses float number to calulate division 
 #------------------------------------------------------------------
 class complx():
