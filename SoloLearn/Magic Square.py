@@ -1,5 +1,6 @@
 import numpy as np
 array=[]
+#----------------------------------------------
 def analyse(darray):
     array_list=darray
     arr=np.array(darray)
@@ -10,6 +11,7 @@ def analyse(darray):
     array_list.append(dia1)
     array_list.append(dia2)
     return array_list
+#----------------------------------------------
 def check(data):
     global array
     dat=data
@@ -17,7 +19,7 @@ def check(data):
     sums=[sum(a) for a in array]
     sub=[n-sums[0]== 0 for n in sums]
     return all(sub),sums[0]
-
+#----------------------------------------------
 def divideArray(code):
     global array
     size=(len(array)-2)//2
@@ -38,6 +40,7 @@ def divideArray(code):
         arrs.append(' + '.join(arr))
     res=' = '.join(arrs)
     return res,attr_name
+#----------------------------------------------
 def show(res,sums):
     global array
     if answer:
@@ -47,19 +50,19 @@ def show(res,sums):
             print('{0} = {1} ({2}) '.format(expr,sums,name))
     else:
         print('it is not a magic square.')
+#----------------------------------------------
+#Main Code
 nums=[]
 try:
-    num_str=[]
-    print('input arrays (blank for finish): ')
-    while True:
-        array=input('array: ').strip()
-        if array == '':
-            break
-        else:
-            num_str=array.split()
-            num0=list(map(int,num_str))
-            nums.append(num0)
+    N=int(input('length of matrix: '))
+    assert N>1
+    for i in range(N):
+        array=input('array {0}: '.format(i+1)).strip()
+        assert len(array.split())==N
+        num_str=array.split()
+        num0=list(map(int,num_str))
+        nums.append(num0)
     answer,total=check(nums)
     show(answer,total)
 except :
-    print('Invalid Number!')
+    print('Invalid matrix or Number!')
