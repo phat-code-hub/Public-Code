@@ -11,7 +11,7 @@ def linear_search(check_value,data):
     except:
         chk=-2
     return chk,times
-data_str=input('Data (seperate by space): ').strip()
+data_str=input('Data: ').strip()
 search_Value=input('Search Value:').strip()
 sep=',' if ',' in data_str else ' '
 datas=data_str.split(sep)
