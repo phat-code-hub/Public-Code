@@ -1,33 +1,30 @@
-MAX_LIMIT=10
+MAX_LIMIT=5
 count=0
 #--------------------------------------------------------
 #Cut result in case of it's lenghth over LIMIT to avoid overflow if any
 #Can increase limit if the number is too big
 def cut(num):
-    if len(str(num)) >MAX_LIMIT:
-        num=int(str(num)[len(str(num))-MAX_LIMIT:])
-    return num
-#--------------------------------------------------------
-def count_0(n,num):
     global count
     res=num
-    if n % 10 ==0:
-        res*=(n // 10)
+    while res % 10 == 0:
         count+=1
-    else:
-        res*=n
-        if res % 10 ==0:
-            res=res//10
-            count+=1
-    return cut(res)
+        res //= 10
+    if len(str(res)) >MAX_LIMIT:
+        res=int(str(res)[len(str(res))-MAX_LIMIT:])
+    return res
+#--------------------------------------------------------
+def count_0(n,num):
+    prod=cut(n)*cut(num)
+    return cut(prod)
 #--------------------------------------------------------
 def Analyse(n):
+    global count
     ans=1
     print('Calcucalting...')
-    for i in range(n,1,-1):
+    for i in range(2,n+1):
         ans=count_0(i,ans)
         #comment out to check
-        #print('Answer x {0} = {1}'.format(i,ans))
+        print('Answer x {0} = {1} zero = {2}'.format(i,ans,count))
 #--------------------------------------------------------
 #Main Code
 try:
