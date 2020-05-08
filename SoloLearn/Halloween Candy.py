@@ -1,12 +1,14 @@
 try:
     houses=int(input('House visited: '))
     assert houses>=3
-    if houses==3: # 3:do not give candy, 4: give candy, toothbrushes and dollar
-        dollar_Case=0
+    dollar=2
+    if houses==4:
+        percent=round(dollar/houses*100)
     else:
-        dollar_Case=2
-    percentage=round((dollar_Case/houses)*100)
-    print(percentage)
+        if (houses-4) % 3  ==2 :
+            dollar+=((houses-4) // 3)*2+2
+        percent=round(dollar/houses *100)
+    print(percent)
 except:
     print('Invalid appropriate integer number')
     print('Visited houses must be more than 2')
