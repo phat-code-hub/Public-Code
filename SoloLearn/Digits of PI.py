@@ -6,18 +6,24 @@
 import math
 from decimal import Decimal as dec , getcontext
 getcontext().prec = 10000 # precision of display
-def findN():
+def findN(n):
     #change to decimal since this formular return hex  numbers
     pi_sum = dec(0)
-    for k in range(10000): 
-        pi_sum += dec(math.pow(16, -k)) * (dec(4/(8*k+1)) - dec(2/(8*k+4)) - dec(1/(8*k+5)) - dec(1/(8*k+6)))
+    for i in range(n):
+        a=dec(math.pow(16, -i))
+        b=dec(4/(8*i+1))
+        c=dec(2/(8*i+4))
+        d=dec(1/(8*i+5))
+        e=dec(1/(8*i+6))
+        pi_sum+=a*(b-c-d-e)
     return str(pi_sum)[2:] # Take digits after decimal point
 #------------------------------------------------------------------------------------------
 try:
     nth= int(input(('N= ')))
     assert 0 < nth< 1001
-    pi_Nth=findN()
-    print(pi_Nth[:44])
+    findN(nth)
+    pi_Nth=findN(nth)
+    # print(pi_Nth[:44])
     print(pi_Nth[nth-1])
 except :
     print('Invalid!')
