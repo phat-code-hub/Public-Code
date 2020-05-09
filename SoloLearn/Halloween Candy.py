@@ -2,11 +2,15 @@ try:
     houses=int(input('House visited: '))
     assert houses>=3
     dollar=2
-    if houses==4:
-        percent=round(dollar/houses*100)
+    if houses==3:
+        percent=0
+    elif houses==4:
+        percent=50
     else:
-        if (houses-4) % 3  ==2 :
-            dollar+=((houses-4) // 3)*2+2
+        le=houses //10
+        chia=(houses -4) % 3
+        if chia  ==2 :
+            dollar+=chia*le
         percent=round(dollar/houses *100)
     print(percent)
 except:
