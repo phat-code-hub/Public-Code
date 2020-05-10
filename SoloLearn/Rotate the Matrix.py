@@ -23,6 +23,7 @@ def rorateMatrix(data):
 try:
     size=int(input('Size of matrix N= '))
     mat=initMatrix(size)
+    assert mat.shape[0]==mat.shape[1]
     rorateMatrix(mat)
 except:
-    print('Invalid Number!')
+    print('Invalid square matrix!')
