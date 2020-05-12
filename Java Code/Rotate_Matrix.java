@@ -7,6 +7,7 @@ public class Rotate_Matrix {
 		String[] sts=str.trim().split("[\\s,]+");
 		mat[idx] =new int[N];
 		for (int j=0; j<N;j++) {
+			mat[idx][j]=Integer.parseInt(sts[j]);
 		}
 	}
 
