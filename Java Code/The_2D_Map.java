@@ -34,23 +34,30 @@ public class The_2D_Map {
 			String[] map=map_.split(",");
 			Index firstP=new Index(-1,-1);
 			Index secondP=new Index(-1,-1);
+			boolean isP1=false;
+			boolean isP2=false;
 			for (int i=0;i<5;i++) {
 				String st=map[i];
-				if (st.contains("P")) {
-					if (firstP.getI() == -1) {
-						firstP.setI(i);
-						firstP.setJ(st.indexOf("P"));
-					} else {
-						secondP.setI(i);
-						secondP.setJ(st.indexOf("P"));
-					}
+				int idx=-1;
+				while (true) {
+					if (st.indexOf("P",idx)>=0) {
+						if (!isP1) {
+							firstP.setI(i);
+							idx=st.indexOf("P");
+							firstP.setJ( idx);
+							isP1=true;
+						} 
+						else if(isP1 & !isP2) {
+							secondP.setI(i);
+							secondP.setJ(st.indexOf("P"));
+							isP2=true;
+						} 
+						else break;
+					} else break;
 				}
 			}
-			if (firstP.getI() >=0 & secondP.getI()>=0) {
-				System.out.println(Index.totalMoves(firstP, secondP));
-			} else {
-				System.out.println(0);
-			}
+			if (isP1 & isP2) System.out.println(Index.totalMoves(firstP, secondP));
+			else System.out.println(0);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
