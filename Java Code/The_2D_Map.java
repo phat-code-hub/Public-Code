@@ -28,6 +28,7 @@ public class The_2D_Map {
 
 	public static void main(String[] args) {
 		try {
+			char key='P';
 			System.out.print("2D Array: ");
 			Scanner sc=new Scanner(System.in);
 			String map_=sc.nextLine().trim();
@@ -39,21 +40,18 @@ public class The_2D_Map {
 			boolean isP2=false;
 			for (int i=0;i<5;i++) {
 				String st=map[i];
-				int idx=0;
-				while (idx>=0) {
-					idx=st.indexOf("P",idx);
-					if (idx>=0) {
+				for (int j=0; j<st.length();j++) {
+					if(st.charAt(j)==key) {
 						if (!isP1) {
 							firstP.setI(i);
-							idx=st.indexOf("P");
-							firstP.setJ( idx);
+							firstP.setJ(j);
 							isP1=true;
 						}
 						else if(isP1 & !isP2) {
 							secondP.setI(i);
-							secondP.setJ(st.indexOf("P"));
+							secondP.setJ(j);
 							isP2=true;
-						} 
+						}
 					}
 				}
 			}

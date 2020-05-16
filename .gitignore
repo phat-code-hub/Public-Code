@@ -2,3 +2,24 @@
 *.class
 Java Code/.project
 Java Code/.classpath
+*.xml
+*.zip
+*.c
+*.cpp
+*.version
+*.index
+*.tree
+*.resources
+*.prefs
+*.log
+*.dat
+*.xmi
+*.properties
+*.mark
+*.txt
+*.ini
+*.default
+Java Code/.metadata/.lock
+Java Code/.metadata/.plugins/org.eclipse.jdt.core/assumedExternalFilesCache
+Java Code/.metadata/.plugins/org.eclipse.jdt.core/externalFilesCache
+Java Code/.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache
