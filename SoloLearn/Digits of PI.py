@@ -15,15 +15,14 @@ def findN(n):
         c=dec(2/(8*i+4))
         d=dec(1/(8*i+5))
         e=dec(1/(8*i+6))
-        pi_sum+=a*(b-c-d-e)
+        pi_sum+=dec(a*(b-c-d-e))
     return str(pi_sum)[2:] # Take digits after decimal point
 #------------------------------------------------------------------------------------------
 try:
     nth= int(input(('N= ')))
     assert 0 < nth< 1001
-    findN(nth)
     pi_Nth=findN(nth)
-    # print(pi_Nth[:44])
+    print(pi_Nth)
     print(pi_Nth[nth-1])
 except :
     print('Invalid!')

@@ -7,32 +7,16 @@ import re
 table={'10':'ten','0':'zero','1':'one','2':'two','3':'three','4':'four',
        '5':'five', '6':'six','7':'seven','8':'eight','9':'nine'}
 reg=re.compile(r'(\D)*\d+(\D)*')# have at least one decimal digit
-reg_num=re.compile(r'\d{,2}')
 #-----------------------------------------------------------------------
 def checkValidString(data):
     return reg.match(data)   
-#-----------------------------------------------------------------------
-def replaceNum(num_str):
-    numalfa=num_str
-    nums=reg_num.findall(numalfa)
-    if len(nums)>0:
-        for n in nums:
-            if  n!='' and int(n)<=10:
-                numalfa=numalfa.replace(n,table[str(int(n))])
-    return numalfa
 #-----------------------------------------------------------------------
 #Main code
 try:
     phrase=input('Phrase :').strip().lower()
     assert checkValidString(phrase)
-    phrases=phrase.split()
-    words=[]
-    for wd in phrases:
-        temp=wd
-        if wd.isalnum():
-            temp=replaceNum(wd)
-            words.append(temp)
-    phrase=(' ').join(words)
+    for n in table.keys():
+        phrase=phrase.replace(n,table[n],len(phrase))
     print(phrase)
 except:
     print('Phrase was nothing or had not any number!')
