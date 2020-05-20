@@ -8,7 +8,7 @@ try:
         data +=datum
     rows_=[float(r) for r in data]
     rows=np.array(rows_).reshape(n,p)
-    rows_mean=[round(mean,2) for mean in rows.mean(axis=1)]
+    rows_mean=np.array([round(mean,2) for mean in rows.mean(axis=1)])
     print(rows_mean)
 except:
     print('Invallid')
