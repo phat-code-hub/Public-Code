@@ -6,9 +6,9 @@ try:
         datum=input().split()
         assert len(datum) ==p
         data +=datum
-    print(data)
     rows_=[float(r) for r in data]
     rows=np.array(rows_).reshape(n,p)
-    print(rows.mean(axis=1))
+    rows_mean=[round(mean,2) for mean in rows.mean(axis=1)]
+    print(rows_mean)
 except:
     print('Invallid')
