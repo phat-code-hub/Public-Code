@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Initials {
-    static List<String>  FirstChars(List<String> list) {
+    static void  FirstChars(List<String> list) {
     	List<String> temp=new ArrayList<>();
     	list.stream()
     		.forEach(ch-> {
@@ -12,7 +12,8 @@ public class Initials {
     			for (String word:words) if (word!="") first+=word.toUpperCase().charAt(0);
     			temp.add(first);
     		});
-    	return temp;
+    	String InitialsList=String.join(" ", temp);
+		System.out.print(InitialsList);
     }
 	public static void main(String[] args) {
 		List<String >  names=new ArrayList<>();
@@ -24,9 +25,7 @@ public class Initials {
 				names.add(sc.nextLine());
 			}
 			sc.close();
-			List<String> Firstname=FirstChars(names);
-			String InitialsList=String.join(" ", Firstname);
-			System.out.print(InitialsList);
+			FirstChars(names);
 		}catch (Exception e ) {
 			e.printStackTrace();
 		}
