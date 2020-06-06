@@ -12,23 +12,30 @@ def day_of_week(year,month):
         days_of_month[2]=29
     day=1
     days=31+28+365*(year-1) + year//4 -year//100+year//400+ (306*(month+1)//10)-122 +day
-    return days % 7
+    return (days % 7)
 #--------------------------------------------------------------
 def show(year,month,dayOrd):
-    rows=[]
-    day=7-dayOrd
-    dNum=days_of_month[month]
-    row=(dNum-day) //7
-    left=row*7-day 
-    print (f'{month}/{year} calendar:')
-    print(' '.join(weekday_title))
-    firstRow=[]
-    blank=' '*4*(dayOrd)
-    if day>0:
-        firstRow=[str(i).rjust(3) for i in range(1,day+1)]
-        firstRow.insert(0,blank)
-        firstRow[0].rjust(3)
-    print(''.join(firstRow))
+    print(dayOrd)
+    print (f'{month}/{year} Calendar:')
+    Lich=[w.rjust(3) for w in weekday_title]
+    print(' '.join(Lich))
+    dNum=list(str(d) for d in range(1,days_of_month[month]+1))
+    for n in range(dayOrd):
+        dNum.insert(0,' ')
+    line,left=divmod(len(dNum),7)
+    if left>0:
+        for l in range(7-left):
+            dNum.insert(len(dNum),' ')
+        line +=1
+    lNum=[]
+    for l in range(line):
+        temp=[]
+        for n in range(7):
+            temp.append(dNum[l*7+n].rjust(3))
+        lNum.append(temp)
+    for i in range(line):
+        print(' '.join(lNum[i]))
+    print(weekday_names[dayOrd])
 #--------------------------------------------------------------
 # Main Code:
 if __name__ == '__main__':
