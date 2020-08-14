@@ -10,16 +10,19 @@ def fact(n):
         return n*fact(n-1)
 
 def AnalyseWord(word):
+    words=[s for s in word]
     letters_info=Counter(word)
     sum_cases=fact(len(word))
     for k,v in letters_info.items():
         if v>1 :
             sum_cases //=fact(v)
-    wds=list(letters_info.keys())
-    wds=sorted(wds)
-    repeat_times=[fact(i-1) for i in range(len(wds),1,-1)]
+    # wds=list(letters_info.keys())
+    # wds=sorted(wds)
+    print(sum_cases)
+    words=sorted(words)
+    repeat_times=[fact(i-1) for i in range(len(words),1,-1)]
     repeat_times.append(0)
-    return wds,repeat_times
+    return words,repeat_times
 #--------------------------------------------
 def findOrder(data):
     lst=[]
@@ -43,6 +46,6 @@ def findOrder(data):
 str_= input('String: ').strip().upper()
 word_list,repeat_list=AnalyseWord(str_)
 print(word_list,repeat_list)
-orders=findOrder(str_)
-print(orders)
-print(orders[-1])
+# orders=findOrder(str_)
+# print(orders)
+# print(orders[-1])
