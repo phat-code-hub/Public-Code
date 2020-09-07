@@ -1,11 +1,11 @@
 import numpy as np
-np.mat()
+# np.mat()
 
 # def calc_payment(price, tax=1.08):
 #     discount = price * (1 - 0.2)
 #     return discount * tax
-#
-#
+
+
 # print(calc_payment(tax=0.8, price=100))
 # print(calc_payment(price=230))
 # A = np.array([2, 5, 6, 8])
