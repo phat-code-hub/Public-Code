@@ -48,7 +48,7 @@ public class Summations_Calculator {
 		case "%":
 			f=(n1,n2) -> n1%n2;
 			break;
-		};
+		}
 		List<String> expr=new ArrayList<>();
 		int total=0;
 		for (int i=min; i<=max;i++) {
