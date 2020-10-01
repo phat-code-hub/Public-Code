@@ -1,8 +1,5 @@
-t=40
-def sum(t):
-    t+=20
-    print("In:",t)
-    return t
-print("out:",t)
-print(sum(t))
-print(t)
+a=[1,2,3,4,5]
+b=[]
+x=0 
+for x in range(a[x]):
+    print(x)
