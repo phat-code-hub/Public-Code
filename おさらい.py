@@ -1,8 +1,6 @@
-t=40
-def sum(t):
-    t+=20
-    print("In:",t)
-    return t
-print("out:",t)
-print(sum(t))
-print(t)
+if __name__ == "__main__":
+    x=1
+    for i in range(5):
+        x+=i
+    x+=1
+    print(X)
