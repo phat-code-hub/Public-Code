@@ -1,5 +1,4 @@
 def fun(*arg):
-    i=0
     b=[]
     for val in arg:
         if val ==0:
