@@ -1,6 +1,10 @@
-if __name__ == "__main__":
-    x=1
-    for i in range(5):
-        x+=i
-    x+=1
-    print(X)
+class System:
+    def __init__(self,x):
+        self.x=x
+    class out:
+        def println(self,other):
+            print(other)
+try:
+    System.out.println("OK")
+except:
+    print("No")
