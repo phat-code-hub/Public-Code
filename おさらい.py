@@ -1,10 +1,7 @@
-class System:
-    def __init__(self,x):
-        self.x=x
-    class out:
-        def println(self,other):
-            print(other)
-try:
-    System.out.println("OK")
-except:
-    print("No")
+import re
+reg=re.compile(r"#\w+")
+text=input().strip()
+m=reg.findall(text)
+if m:
+    for t in m:
+        print (t)
