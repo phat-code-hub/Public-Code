@@ -1,5 +1,5 @@
-m=0
-for i in range (100):
-    r=i %22
-    m=max(m,i-r)
-    print(f"i={i}\tr={r}\t i-r: {i-r}\t m={m}")
+x={1,2,3,4,5,6}
+y={0,1,2,3}&x
+print(y)
+z=list(filter(lambda c: c>1,y))
+print(z)
