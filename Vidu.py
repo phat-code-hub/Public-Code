@@ -1,7 +1,6 @@
-X=[i for i in range(10)]
-r=slice(3,None)
-print(X[r])
-print(X[r][r])
-print(X[r][r][r])
-y=slice(4,None)
-print(X[y][y])
+a=7
+b=(a>5)+100
+print(b)
+b=a<5 and 'a' or 'b'
+print(b)
+print(101 and 'a')
