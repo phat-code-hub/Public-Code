@@ -1,6 +1,4 @@
-a=7
-b=(a>5)+100
-print(b)
-b=a<5 and 'a' or 'b'
-print(b)
-print(101 and 'a')
+s="think"
+print(sorted(list(s)[:4]))
+s="".join(sorted(list(s)[:4]))
+print(s)
