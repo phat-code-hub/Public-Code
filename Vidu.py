@@ -1,3 +1,4 @@
-gen=(n for n in range(6))
-print(type(gen))
-print(gen)
+a=[i for i in range(3)]
+def na(x):
+    return x+[len(x)]
+print(na(a))
