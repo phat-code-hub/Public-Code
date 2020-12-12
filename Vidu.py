@@ -1,4 +1,4 @@
-a=[i for i in range(3)]
-def na(x):
-    return x+[len(x)]
-print(na(a))
+def  f(x):
+    x=2
+    return (x-1)
+print(f(4))
