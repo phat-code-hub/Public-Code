@@ -1,2 +1,3 @@
-print(-15/10.0)
-print(-15//10.0)
+x=[1,2,3]
+y=list(x)
+print(y)
