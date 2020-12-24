@@ -4,9 +4,15 @@ class MyThread extends Thread {
     }
 }
 public class Thu {
-    public static void main(String[] args){
-        MyThread mt =new MyThread();
-        mt.start();
+    static int y=24 ;
+
+    public static void main(String[] args) {
+        // final int x;
+        // y = 3;
+        // x=6;
+         final boolean z=false;
+        System.out.println(z);
+
     }
 
 }
