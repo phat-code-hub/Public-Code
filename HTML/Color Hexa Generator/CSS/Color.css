@@ -1,0 +1,12 @@
+#hex {
+    font-size:24px;
+    color:red;
+    text-align: center;
+}
+h2 {
+    font-size:20px;
+    color:blue;
+} 
+colgroup#group1 {
+    width:100px;
+}

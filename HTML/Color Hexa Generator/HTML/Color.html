@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>COLOR HEX GENERATOR </title>
+        <script src="../JS/Color.js"></script>
+        <link rel ="stylesheet" href="../CSS/Color.css"><link>
+    </head>
+    <body>
+        <table width="200px" border="0px">
+            <caption><h2>COLOR HEXAVALUE</h2></caption>
+            <colgroup span=1 id="group1"></colgroup>
+            <colgroup span =1 id ="group2"></colgroup>
+            <colgroup span=1 id ="group3" ></colgroup>
+            <colgroup span =1 id="group4"></colgroup>
+            <thead>
+                <th></th>
+                <th>RANGE</th>
+                <th>VALUE</th>
+                <th>COLOR</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td >Red:</td>
+                    <td>
+                        <input type="range" id="rred" min=0 max=255 value =100
+                        onchange="change(1)" onmouseover="show(1)"/>
+                    </td>
+                    <td  >
+                        <input type="number" id="nred" style="width:4em"
+                        value=100 onchange="change(2)" onmouseover="showHex(1)"/>
+                    </td>
+                    <td rowspan="3" id ="color" ></td>
+                </tr>
+                <tr>
+                    <td>Green:</td>
+                    <td>
+                        <input type="range" id="rgreen" min=0 max=255 value =100 
+                        onchange="change(3)" onmouseover="show(2)"/>
+                    </td>
+                    <td >
+                        <input type="number" id="ngreen" style="width:4em"
+                         value=100 onchange="change(4)" onmouseover="showHex(2)"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Blue:</td>
+                    <td>
+                        <input type="range" id="rblue" min=0 max=255 value =100 
+                        onchange="change(5)" onmouseover="show(3)"/>
+                    </td>
+                    <td>
+                        <input type="number" id="nblue" style="width:4em"
+                         value=100 onchange="change(6)" onmouseover="showHex(3)"/>
+                    </td>
+                </tr>
+            </tbody>
+           <tfoot>
+              <tr>
+                  <td>HexValue:</td>
+                  <td colspan="3" id ="hex">PPP</td>
+              </tr>
+           </tfoot>
+        </table>
+    </body>
+</html>
