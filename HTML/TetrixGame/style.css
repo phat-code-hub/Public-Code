@@ -1,0 +1,33 @@
+#score {
+    font-size:large;
+    font-weight: bold;
+    color:red;
+}
+#title {
+    position:absolute;
+    left:20px;
+    top:10px;
+}
+canvas#back {
+    position:absolute;
+    left:20px;
+    top:150px;
+    background-color:black;
+}
+canvas#game{
+    position:absolute;
+    left:20px;
+    top:150px;
+    background-color:transparent;
+}
+canvas#next{
+    position:absolute;
+    left:300px;
+    top:150px;
+    background-color:black;
+}
+button#start {
+    position:absolute;
+    left:300px;
+    top:300px;
+}
