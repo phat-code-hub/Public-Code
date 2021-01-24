@@ -4,8 +4,6 @@ Java Code/.project
 Java Code/.classpath
 *.xml
 *.zip
-*.c
-*.cpp
 *.version
 *.index
 *.tree
