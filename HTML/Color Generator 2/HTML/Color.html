@@ -1,0 +1,128 @@
+<!--
+  1- This program is for learning
+  2-We can search and confirm infos by choosing normal named color in the list
+  3-Furthermore, without using standard color input tag, we can check color 
+    by changing range and numeric number (0~255) or hex value (00~ff) directly
+  Hope to enjoy 
+  Made by Ueda
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>COLOR HEX GENERATOR </title>
+        <script src="../JS/Color.js"></script>
+        <link rel ="stylesheet" href="../CSS/Color.css"><link>
+    </head>
+    <body>
+        <table id="Hello" width="200px" >
+            <caption><h2>COLOR VALUE REFERENCE</h2></caption>  
+             <colgroup span=1 id="group1"></colgroup>
+            <colgroup span =1 id ="group2"></colgroup>
+            <colgroup span=1 id ="group3" ></colgroup>
+            <colgroup span =1 id="group4"></colgroup>
+            <colgroup span =1 id="group5"></colgroup>
+            <thead>
+                <th></th>
+                <th>RANGE</th>
+                <th>VALUE</th>
+                <th>HEX</th>
+                <th>SAMPLE</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td >Red:</td>
+                    <td>
+                        <input type="range" id="rred" tabindex ="0" class="red range"
+                        min="0" max="255"
+                        onchange="update(0,0)" />
+                    </td>
+                    <td  >
+                        <input type="number" id="nred" tabindex ="3" class="red number"
+                        style="width:4em" maxlength="3"
+                        min="0" max ="255"  
+                        onchange="update(0)"/>
+                    </td>
+                    <td>
+                        <input type="text" id ="tred" maxlength="2" size="2px" 
+                        tabindex ="6" class="red hex"
+                        onchange="update(0,2)"/>
+                    </td>
+                    <td rowspan="3" id ="color" ></td>
+                </tr>
+                <tr>
+                    <td>Green:</td>
+                    <td>
+                        <input type="range" id="rgreen" tabindex ="1" class="green range"
+                        min="0" max="255" 
+                        onchange="update(1,0)"  />
+                    </td>
+                    <td >
+                        <input type="number" id="ngreen" tabindex ="4" class="green number"
+                        style="width:4em"
+                         min="0"  max="255"
+                         onchange="update(1)" />
+                    </td>
+                    <td>
+                        <input type="text" id ="tgreen" maxlength="2" size="2px"
+                        tabindex ="7" class="green hex" 
+                        onchange="update(1,2)"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Blue:</td>
+                    <td>
+                        <input type="range" id="rblue" tabindex ="2" class="blue range"
+                        min="0" max="255"
+                        onchange="update(2,0)"  />
+                    </td>
+                    <td>
+                        <input type="number" id="nblue" tabindex ="5" class="blue number"
+                        style="width:4em"
+                         min="0"  max = "255"
+                         onchange="update(2)" />
+                    </td>
+                    <td>
+                        <input type="text" id ="tblue" maxlength="2" size="2px" 
+                        tabindex ="8" class="blue hex" 
+                        onchange="update(2,2)"/>
+                    </td>
+                </tr>
+            </tbody>
+           <tfoot >
+              <tr>
+                    <td>Name:</td>
+                    <td colspan="4" id ="hexText" onmouseover="info()" ></td>
+              </tr>
+              <tr>
+                    <td>Type:</td>
+                    <td colspan="4">
+                        <p align= "center" onchange="menu()">
+                            <input type= "radio" name ="kind" value="all" id="all">
+                            <label for="all">All</label>
+                            <input type= "radio" name ="kind" value="origin" id="origin" checked>
+                            <label for="Origin">Origin</label>
+                            <input type= "radio" name="kind" value="japan" id="japan">
+                            <label for="Japan">Japan</label>
+                            <input type= "radio" name="kind" value="foreign" id="foreign">
+                            <label for="foreign">foreign</label>
+                        </p>
+
+                    </td>
+              </tr>
+              <tr  >
+                  <td>Color:</td>
+                  <td>
+                    <select id="choice" onchange="showName()" >
+                    </select> 
+                  </td>
+              </tr>
+              <tr > 
+                <td colspan="5">
+                    <pre id ="explain"></pre>
+                </td>
+                </tr>
+           </tfoot>
+        </table>
+    </body>
+</html>

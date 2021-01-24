@@ -1,0 +1,36 @@
+#hexText {
+    font-size:20px;
+    color:red;
+    text-align: center;
+}
+h2 {
+    font-size:20px;
+    color:blue;
+} 
+colgroup#group1 {
+    width:200px;
+}
+table {
+    border-collapse: collapse;
+}
+#nred,#ngreen,#nblue  {
+    text-align: center;
+}
+#tred,#tgreen,#tblue {
+    text-align: center;
+}
+thead {
+    font-size: 18px;
+}
+#choice {
+    font-size: 15px;
+}
+select {
+    width: 180px;
+    height:30px;
+    font-size:15px;
+}
+#explain {
+    color:rgba(4, 47, 58, 0.527);
+    font-style: italic;
+}
