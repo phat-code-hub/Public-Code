@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilitaryTime", "MilitaryTime.csproj", "{5D2506A8-B130-495B-9136-229FD891E0FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D2506A8-B130-495B-9136-229FD891E0FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D2506A8-B130-495B-9136-229FD891E0FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D2506A8-B130-495B-9136-229FD891E0FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D2506A8-B130-495B-9136-229FD891E0FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8BB9380-25E3-4295-8DC0-196F76CE085E}
+	EndGlobalSection
+EndGlobal

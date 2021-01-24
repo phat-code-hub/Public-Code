@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Fruit Bowl/1.0.0": {
+        "runtime": {
+          "Fruit Bowl.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Fruit Bowl/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
