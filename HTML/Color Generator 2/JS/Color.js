@@ -229,7 +229,7 @@ function update(basic,inputType=1){
                     colors[basic]=numValue[basic].value;              
                 }
                 else {
-                    alert("InValid!\nNum is between "+MIN +" and "+MAX);
+                    alert("InValid!\nValue must be between "+MIN +" and "+MAX);
                     colors[basic]=MIN;
                     numValue[basic].value=MIN;         
                 }
@@ -245,7 +245,7 @@ function update(basic,inputType=1){
                 rangeValue[basic].value=colors[basic];
                 hexValue[basic].value=pad(colors[basic].toString(16));
             } else {
-                alert("InValid!\nHex value is between '00' and'ff'");
+                alert("InValid!\nHex value must be between '00' and'ff'");
                 color[basic]=MIN;
                 numValue[basic].value=MIN;
                 rangeValue[basic].value=MIN;
@@ -315,15 +315,17 @@ function info(num=3) {
     switch (num) {
         case 1: // mouse on number or range
         {   
+            this.event.target.title="Value is from 0 to 255";
             break;
         }
         case 2: // mouse on hex input text
         {
+            this.event.target.title="Hex value is from '00' to 'ff'";
             break;
         }
         default: // mouse on name label
         {
-            rgb="RGB("+colors[0]+","+colors[1]+","+colors[2]+")";
+            rgb="rgb("+colors[0]+","+colors[1]+","+colors[2]+")";
             if (index > -1) {
                 name=allList.name[index];
                 note=allList.note[index];

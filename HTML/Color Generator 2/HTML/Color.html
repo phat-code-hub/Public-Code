@@ -35,18 +35,18 @@
                     <td>
                         <input type="range" id="rred" tabindex ="0" class="red range"
                         min="0" max="255"
-                        onchange="update(0,0)" />
+                        onchange="update(0,0)" onmouseover="info(1)"/>
                     </td>
                     <td  >
                         <input type="number" id="nred" tabindex ="3" class="red number"
                         style="width:4em" maxlength="3"
                         min="0" max ="255"  
-                        onchange="update(0)"/>
+                        onchange="update(0)"onmouseover="info(1)"/>
                     </td>
                     <td>
                         <input type="text" id ="tred" maxlength="2" size="2px" 
                         tabindex ="6" class="red hex"
-                        onchange="update(0,2)"/>
+                        onchange="update(0,2)"  onmouseover="info(2)"/>
                     </td>
                     <td rowspan="3" id ="color" ></td>
                 </tr>
@@ -55,18 +55,18 @@
                     <td>
                         <input type="range" id="rgreen" tabindex ="1" class="green range"
                         min="0" max="255" 
-                        onchange="update(1,0)"  />
+                        onchange="update(1,0)" onmouseover="info(1)" />
                     </td>
                     <td >
                         <input type="number" id="ngreen" tabindex ="4" class="green number"
                         style="width:4em"
                          min="0"  max="255"
-                         onchange="update(1)" />
+                         onchange="update(1)" onmouseover="info(1)" />
                     </td>
                     <td>
                         <input type="text" id ="tgreen" maxlength="2" size="2px"
                         tabindex ="7" class="green hex" 
-                        onchange="update(1,2)"/>
+                        onchange="update(1,2)"  onmouseover="info(2)"/>
                     </td>
                 </tr>
                 <tr>
@@ -74,18 +74,18 @@
                     <td>
                         <input type="range" id="rblue" tabindex ="2" class="blue range"
                         min="0" max="255"
-                        onchange="update(2,0)"  />
+                        onchange="update(2,0)" onmouseover="info(1)" />
                     </td>
                     <td>
                         <input type="number" id="nblue" tabindex ="5" class="blue number"
                         style="width:4em"
                          min="0"  max = "255"
-                         onchange="update(2)" />
+                         onchange="update(2)" onmouseover="info(1)"/>
                     </td>
                     <td>
                         <input type="text" id ="tblue" maxlength="2" size="2px" 
                         tabindex ="8" class="blue hex" 
-                        onchange="update(2,2)"/>
+                        onchange="update(2,2)"  onmouseover="info(2)"/>
                     </td>
                 </tr>
             </tbody>
