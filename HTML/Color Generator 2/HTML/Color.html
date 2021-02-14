@@ -35,7 +35,7 @@
                     <td>
                         <input type="range" id="rred" tabindex ="0" class="red range"
                         min="0" max="255"
-                        onchange="update(0,0)" onmouseover="info(1)"/>
+                        onchange="update(0,0)" onmouseover="info(0)"/>
                     </td>
                     <td  >
                         <input type="number" id="nred" tabindex ="3" class="red number"
@@ -48,14 +48,14 @@
                         tabindex ="6" class="red hex"
                         onchange="update(0,2)"  onmouseover="info(2)"/>
                     </td>
-                    <td rowspan="3" id ="color" ></td>
+                    <td rowspan="3" id ="color" onmouseover="info(3)" ></td>
                 </tr>
                 <tr>
                     <td>Green:</td>
                     <td>
                         <input type="range" id="rgreen" tabindex ="1" class="green range"
                         min="0" max="255" 
-                        onchange="update(1,0)" onmouseover="info(1)" />
+                        onchange="update(1,0)" onmouseover="info(0)" />
                     </td>
                     <td >
                         <input type="number" id="ngreen" tabindex ="4" class="green number"
@@ -74,7 +74,7 @@
                     <td>
                         <input type="range" id="rblue" tabindex ="2" class="blue range"
                         min="0" max="255"
-                        onchange="update(2,0)" onmouseover="info(1)" />
+                        onchange="update(2,0)" onmouseover="info(0)" />
                     </td>
                     <td>
                         <input type="number" id="nblue" tabindex ="5" class="blue number"
@@ -95,13 +95,15 @@
                     <td colspan="4" id ="hexText" onmouseover="info()" ></td>
               </tr>
               <tr>
-                    <td>Type:</td>
+                <td>Type:</td>
                     <td colspan="4">
                         <p align= "center" onchange="menu()">
                             <input type= "radio" name ="kind" value="all" id="all">
                             <label for="all">All</label>
                             <input type= "radio" name ="kind" value="origin" id="origin" checked>
-                            <label for="Origin">Origin</label>
+                            <label for="Origin">Basic</label>
+                            <input type= "radio" name="kind" value="css" id="css">
+                            <label for="css">CSS3</label>
                             <input type= "radio" name="kind" value="japan" id="japan">
                             <label for="Japan">Japan</label>
                             <input type= "radio" name="kind" value="foreign" id="foreign">
@@ -113,7 +115,7 @@
               <tr  >
                   <td>Color:</td>
                   <td>
-                    <select id="choice" onchange="showName()" >
+                    <select id="choice" onchange="showName()" onmouseover="showCount()">
                     </select> 
                   </td>
               </tr>
