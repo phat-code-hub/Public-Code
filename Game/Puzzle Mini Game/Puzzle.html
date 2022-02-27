@@ -1,0 +1,79 @@
+<!-- This is a web mini game made by javascript
+    it will finish when displayed numbers are lined 
+    in right order for left to right and top to bottom 
+    created by Ueda  -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- below meta tags is options-->
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+        <title>15 PUZZLE MINI GAME</title>
+        <style>
+            .tile {
+                width:70px;
+                height:70px;
+                border: 1px solid blue;
+                border-radius :10px;
+                text-align: center;
+                font-size: 36px;
+                background-color: white;
+                box-shadow: rgb(128,128,128) 5px 5px;
+            }
+        </style>
+        <script>
+            "use strict";
+            //Global variable
+            var tiles = [];
+            // Initialize Function
+            function init(){
+                var table = document.getElementById("table");
+                for (var i=0;i<4;i++){
+                    var tr = document.createElement("tr");
+                    for (var j=0;j<4;j++){
+                        var td = document.createElement("td");
+                        var index = i*4+j;
+                        td.className ="tile";
+                        td.index = index;
+                        td.value = index;
+                        td.textContent = index == 0? "":index;
+                        td.onclick=click;
+                        tr.appendChild(td);
+                        tiles.push(td);
+                    }
+                    table.appendChild(tr)
+                }
+                // estimate loop click times to win the game
+                var REPEATE_TIMES_TO_WIN = 1000;
+                for (var i=0;i <REPEATE_TIMES_TO_WIN;i++){
+                    click({srcElement: {index:Math.floor(Math.random()*16)}});
+                }
+            }
+            // Click Function : swap two cell value
+            function click(e){
+                var i = e.srcElement.index;
+                if ((i-4)>= 0 && tiles[i-4].value == 0 ) {
+                    swap (i,i-4);  // upper cell is blank
+                } else if ((i+4) <16 && tiles[i+4].value == 0 ){
+                    swap (i,i+4); // lower cell is blank
+                } else if ((i % 4) != 0 && tiles[i-1].value == 0 ){
+                    swap (i,i-1); // left cell is blank
+                }if ((i%4)!= 3 && tiles[i+1].value == 0 ) {
+                    swap (i,i+1); // right cell is blank
+                }
+            }
+            // Swap two Cell values
+            function swap(i,j){
+                var tmp = tiles[i].value;
+                tiles[i].textContent =tiles[j].textContent; //Displayed value
+                tiles[i].value = tiles[j].value; //control value
+                tiles[j].textContent = tmp;
+                tiles[j].value = tmp;
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <table id ="table"></table>
+    </body>
+</html>

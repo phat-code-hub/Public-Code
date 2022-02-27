@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNKY BLOCK GAME</title>
+    <style>
+        #canvas {
+            width:800px;
+            height:600px;
+            touch-action: none;
+        }
+        #start{
+            position:absolute;
+            left:200px;
+            top: 200px;
+        }
+    </style>
+    <script src="FunkyBlock.js"></script>
+</head>
+<body onload="init()">
+    <!-- <audio src="sound.mp3" id="sound"></audio>
+    <audio src="letsgo.mp3" id="bgm"></audio> -->
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <!-- images init -->
+    <img id ="start" src="Start.png" width="100px" height="100px" onclick="go()"><br>
+    <img id ="bgimage" src="back.png" style="display:none">
+    <img id ="block0" src="block0.png" style="display:none">
+    <img id ="block1" src="block1.png" style="display:none">
+    <img id ="block2" src="block2.png" style="display:none">
+    <img id ="block3" src="block3.png" style="display:none">
+    <img id ="block4" src="block4.png" style="display:none">
+</body>
+</html>

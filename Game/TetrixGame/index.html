@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- put css and js file on the same folder -->
+        <link rel="stylesheet" href=".\\style.css">
+        <script src=".\\program.js"></script>
+        <title>Simple TETRIX Game</title>
+        <!-- To use Sound , need to prepare below audio files by optional:  
+            then in JS file , comment out audio play() commands:
+
+            "bRotate" : rotating
+            "bDrop" : dropping
+            "bDrop": hit under things
+            "bFilled" : fullfilled one line
+            "bAllFilled": fullfilled 4 lines at same time
+            "bOver": Gaem over  
+        -->
+        <!--  -->
+        <!-- <audio id ="bRotate" preload="auto">
+            <source src=".\\Sound\\bRotate.mp3" type ="audio/mp3"> 
+        </audio>
+        <audio id ="bDrop" preload="auto">
+            <source src=".\\Sound\\bDrop.mp3" type ="audio/mp3"> 
+        </audio>
+        <audio id ="bHit" preload="auto">
+            <source src=".\\Sound\\bHit.mp3" type ="audio/mp3"> 
+        </audio>
+        <audio id ="bFilled" preload="auto">
+            <source src=".\\Sound\\bFilled.mp3" type ="audio/mp3"> 
+        </audio>
+        <audio id ="bAllFilled" preload="auto">
+            <source src=".\\Sound\\bAllFilled.mp3" type ="audio/mp3"> 
+        </audio>
+        <audio id ="bOver" preload="auto">
+            <source src=".\\Sound\\bOver.mp3" type ="audio/mp3"> 
+        </audio> -->
+    </head>
+    <body onload="init()" onkeydown="move(event)">
+        <div id="title">
+            <h1>TETRIX</h1>
+            <div style="width:380px">
+                Score: <span id ="score">0</span>
+            </div>
+        </div>
+        <canvas id="back" width="240"height="440"></canvas>
+        <canvas id ="game" width="240" height="440"></canvas>
+        <canvas id="next" width="80" height="80"></canvas>
+        <button id="start" onclick="gamestart()">
+                GAME <br> START
+        </button>
+    </body>
+
+</html>

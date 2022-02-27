@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST IMAGE</title>
+    <style>
+        #legend {
+            color :blue;
+            font-weight: bold;
+        }
+        .menu {
+            border:none;
+        }
+        .level {
+            font-weight: bold;
+            font-size: 15px;
+            color:blue;
+        }
+    </style>
+    <script src="Data.js"></script>
+    <script src="Main.js"></script>
+</head>
+<body onload="init()">
+    <div>
+        <fieldset class="menu">
+            <legend id="legend">OPTION</legend>
+            <p class ="level">
+                <label><input type="radio"  name ="level" id="l1" onclick="Choice(1)" checked>Easy</label>
+                <label><input type="radio"  name="level" id ="l2" onclick="Choice(2)" >Middle</label>
+                <label><input type="radio"  name="level" id ="l3" onclick="Choice(3)">Hard</label>
+        
+            </p>
+            <p>
+                <label for="choice">
+                    <select id="select">
+                        <option value="0">Random</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </label>
+                <button id="start" onclick="Play()">START</button>
+            </p>
+        </fieldset>
+    </div>
+    <div >
+        <canvas id="canvas" ></canvas>
+        <table>
+            <tr>
+                <td></td><td></td>
+                <td><button onclick="kUp()">U</button></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button onclick="kLeft()">L</button></td>
+                <td><img src="..\Undo.png " height="20" width="20" onclick="Undo()"></img></td>
+                <td><button onclick="kRight()">R</button></td>
+            </tr>
+            <tr>
+                <td></td><td></td>
+                <td><button onclick="kDown()">D</button></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!--This is a lite traditional game to put luggages into 
+    stock at designed place
+    The solution is using AND and XOR binary operation
+    to decide that worker and luggage could moving forward
+    or not. 
+    Using images are optional. But if any , you should run code
+    on your own PC than SL playground
+    Created by Ueda-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASIC SOKOBAN GAME</title>
+    <script src ="sokoban.js"></script>
+</head>
+<body onload = "init()">
+    <div>
+        <button id ="reset" onclick="location.reload()">reset</button>
+        <p>STEPS:<span id="step" style ="font-size :28px; color:blue">0</span></p>
+        <p>FILLED:<span id ="filled" style ="font-size :28px; color:red">0</span></p>
+    </div>
+    <!-- Main canvas -->
+    <canvas id="soko" width="760" height="440" ></canvas>
+    <!-- Direction Control Buttons -->
+    <table>
+        <tr>
+            <td></td><td></td>
+            <td><button onclick="kUp()">U</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="kLeft()">L</button></td>
+            <td></td>
+            <td><button onclick="kRight()">R</button></td>
+        </tr>
+        <tr>
+            <td></td><td></td>
+            <td><button onclick="kDown()">D</button></td>
+            <td></td>
+        </tr>
+    </table>
+    <!-- main image prepare -->
+    <img id ="Wall" src="https://raw.githubusercontent.com/phat-code-hub/CodeData/main/SokoBan/Wall.png" alt="█" style="display:none"/>
+    <img id ="Goal" src="https://raw.githubusercontent.com/phat-code-hub/CodeData/main/SokoBan/Goal.png" alt="☺" style="display:none"/>
+    <img id ="Luggage" src="https://raw.githubusercontent.com/phat-code-hub/CodeData/main/SokoBan/Luggage.png" alt="O" style="display:none"/>
+    <img id ="ManL" src="https://raw.githubusercontent.com/phat-code-hub/CodeData/main/SokoBan/manL.png" alt="←" style="display:none"/>
+    <img id ="ManR" src="https://raw.githubusercontent.com/phat-code-hub/CodeData/main/SokoBan/ManR.png" alt="→" style="display:none"/>
+    <img id ="ManU" src="https://raw.githubusercontent.com/phat-code-hub/CodeData/main/SokoBan/ManU.png" alt="↑" style="display:none"/>
+    <img id ="ManD" src="https://raw.githubusercontent.com/phat-code-hub/CodeData/main/SokoBan/manD.png" alt="↓" style="display:none"/>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Hex Color Code Generator/1.0.0": {
+        "runtime": {
+          "Hex Color Code Generator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Hex Color Code Generator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
