@@ -1,0 +1,30 @@
+<!-- 
+    This code to learn basic code for creating DOM element ( here table for example)
+    and combine with jS code to add event handle dynamically.
+    show tool tip on input text and cell practice
+    Enjoy code please! 
+    
+    --Created by Ueda--
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator for Table</title>
+    <script src =".//init.js"></script>
+    
+</head>
+<body onload ="init()">
+    <h3>Click any cell to generate color</h3>
+    <span>Row : </span>
+    <input type="number"  id="rowId" style="width:3em" min="1" placeholder="5"  >
+    <span>Column: </span>
+    <input type="number"  id="colId" style="width:3em" min="1" placeholder="5"  >
+    <button onclick="initTable()">new</button>
+    <table id="board" border ="1px"></table>
+    
+    <h2 id="info"></h2>
+</body>
+</html>
