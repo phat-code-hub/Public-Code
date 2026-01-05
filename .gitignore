@@ -153,3 +153,5 @@ Excel/Sample/hello.py
 SoloLearn/.Python.code-workspace.icloud
 C\#/AverageWordLength/obj/Debug/netcoreapp3.1/AverageWordLength.csproj.AssemblyReference.cache
 C\#/AverageWordLength/obj/Debug/netcoreapp3.1/AverageWordLength.GeneratedMSBuildEditorConfig.editorconfig
+
+.fake
