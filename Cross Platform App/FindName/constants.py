@@ -6,7 +6,8 @@ AUTHOR = {
     "Japanese":"植田発",
     "Vietnamese":"UEDA HATSURU"
 }
-GUIDE_PATH = "Guide.txt"
+ICON_FILE = "app.png"
+GUIDE_FILE = "Guide.txt"
 GUIDE_TITLE ={
     "English":"How to Use",
     "Japanese":"使い方について",

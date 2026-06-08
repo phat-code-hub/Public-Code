@@ -15,10 +15,7 @@ from FindName.actions import *
 from FindName.languages import *
 from FindName.view_media import *
 from FindName.constants import *
-from FindName.system_info import (resource_path,saved_to_registry,
-                        check_license,toggle_password_visibility)
-from FindName.system_info import (check_installed_app,apply_theme,choose_custom_background,
-                                    choose_custom_text,reset_custom_colors)
+from FindName.system_info import * 
 # ---------------------------
 # Valid Confirmation
 # ---------------------------
@@ -69,8 +66,6 @@ class Viewer(QWidget):
     def setContent(self,content):
         if content:
             self.textbox.setPlainText(content)
-        # else:
-        #     self.textbox.setPlainText("No content to display.")
 # -----------------------------------------------------------------------------------
 # UI-only class 
 # -----------------------------------------------------------------------------------
@@ -104,18 +99,30 @@ class FileSearch(QWidget):
         # SubMenu 1-1 :Language 
         self.menu11_language = self.menu1_home.addMenu(f'{MENU2["Language"][self.language]} (&L)')
         
-        self.menu111_language_japanese =QAction( LANGUAGES[self.language]["JP"],self)
-        self.menu111_language_english =QAction(LANGUAGES[self.language]["EN"],self)
-        self.menu111_language_vietnamese =QAction( LANGUAGES[self.language]["VN"],self)
+        self.language_group = QActionGroup(self)
+        self.language_group.setExclusive(True)
+        
+        self.menu111_language_japanese =QAction( LANGUAGES[self.language]["JP"],self,checkable=True)
+        self.menu111_language_english =QAction(LANGUAGES[self.language]["EN"],self,checkable=True)
+        self.menu111_language_vietnamese =QAction( LANGUAGES[self.language]["VN"],self,checkable=True)
         
         self.menu111_language_japanese.setShortcut("Ctrl+J")
         self.menu111_language_english.setShortcut("Ctrl+E")
         self.menu111_language_vietnamese.setShortcut("Ctrl+V")
+        for act in (
+            self.menu111_language_japanese,
+            self.menu111_language_english,
+            self.menu111_language_vietnamese,
+        ):
+            self.language_group.addAction(act)
+            self.menu11_language.addAction(act)
         
-        
-        self.menu11_language.addAction(self.menu111_language_japanese)
-        self.menu11_language.addAction(self.menu111_language_english)
-        self.menu11_language.addAction(self.menu111_language_vietnamese)
+        if (self.language =="English"):
+            self.menu111_language_english.setChecked(True)
+        elif (self.language  =="Japanese"):
+            self.menu111_language_japanese.setChecked(True) 
+        elif (self.language  =="Vietnamese"):
+            self.menu111_language_vietnamese.setChecked(True) 
         
         # SubMenu 1-2 : Theme (background , font) change
         #Set Theme as a menu 
@@ -456,8 +463,8 @@ class FileSearch(QWidget):
         #          Initialize Setting
         #-----------------------------------------------
         self.setWindowTitle(TITLE[self.language])
-        self.icon = resource_path("app.ico")
-        self.setWindowIcon(QIcon(self.icon))
+        self.icon = Path(resource_path("resources")) / "icons" / ICON_FILE
+        self.setWindowIcon(QIcon(str(self.icon)))
         self.isOffice,self.isCAD = check_installed_app(self)
     #------------------------------------------------
     def keyPressEvent(self, event):

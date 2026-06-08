@@ -1,4 +1,5 @@
 import os,sys
+from pathlib import Path
 import platform,locale
 
 from PySide6.QtCore import Qt
@@ -25,6 +26,14 @@ def resource_path(relative_path):
         # When running as a normal Python script
         base_path = os.path.dirname(os.path.abspath(__file__))
     return os.path.join(base_path, relative_path)
+
+# def resource_path(relative_path):
+#     if hasattr(sys, "_MEIPASS"):
+#         base_path = sys._MEIPASS
+#     else:
+#         base_path = Path(__file__).resolve().parent
+
+#     return base_path / relative_path
 #----------------------------------------------------------
 def path_normalized(path0):
     # Convert REAL yen sign → backslash

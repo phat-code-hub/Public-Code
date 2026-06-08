@@ -1,20 +1,19 @@
 # actions.py
 #--------------------------------------------------------------------------------------
-import os
-
+import os,sys
 from PySide6.QtWidgets import (QListWidgetItem,QMessageBox,QFileDialog,
                             QColorDialog,QLineEdit,
                             QTextEdit,QApplication,
                             QDialog,QPlainTextEdit,QVBoxLayout)
 from PySide6.QtCore import Qt,QUrl
-from PySide6.QtGui import QPalette,QColor,QFontMetrics,QDesktopServices
+from PySide6.QtGui import QPalette,QColor,QFontMetrics,QDesktopServices,QIcon
 
 from FindName.view_media import reset_media_ui,main_media
 from FindName.view_txt  import *
 from FindName.view_cad  import *
 from FindName.languages import *
 from FindName.constants import *
-from FindName.system_info import saved_to_registry,path_normalized
+from FindName.system_info import saved_to_registry,path_normalized,resource_path
 from FindName import *
 #--------------------------------------------------------------------------------------
 def move_to_center(self):
@@ -51,6 +50,13 @@ def change_language(self,lang = "EN"):
     self.menu111_language_japanese.setText( LANGUAGES[self.language]["JP"])
     self.menu111_language_english.setText(LANGUAGES[self.language]["EN"])
     self.menu111_language_vietnamese.setText( LANGUAGES[self.language]["VN"])
+    # if (lang =="EN"):
+    #     self.menu111_language_english.setChecked(True)
+    # elif (lang =="JP"):
+    #     self.menu111_language_japanese.setChecked(True) 
+    # elif (lang =="VN"):
+    #     self.menu111_language_vietnamese.setChecked(True)   
+
     #----------Theme Color-----------------
     self.menu_theme.setTitle(f'{MENU2["Theme"][self.language]}...')
     self.action_theme_light.setText(THEME["Light"][self.language])
@@ -88,30 +94,6 @@ def change_language(self,lang = "EN"):
     change_logic(self)
     change_tooltips(self)
     init_preview(self)
-#----------------------------------------------------------------   
-# def change_theme(self):
-    
-#     """Pick background + text colors using QColorDialog."""
-#     color = QColorDialog.getColor(self.palette().color(QPalette.Window), self, make_word(self,0)) #Background
-#     if color.isValid():
-#         palette = self.palette()
-#         palette.setColor(QPalette.Window, color)
-#         self.setPalette(palette)
-
-#     text_color = QColorDialog.getColor(Qt.black, self, make_word(self,1))
-#     if text_color.isValid():
-#         p = self.palette()
-#         p.setColor(QPalette.WindowText, text_color)
-#         self.setPalette(p)
-# #----------------------------------------------------------------
-# def make_word(self,kind=0):
-#     if self.language =="English":
-#         word = f"Select {THEME[self.language][kind]} color"
-#     elif self.language == "Japanese":
-#         word = f"{THEME[self.language][kind]}の色を選んでください。"
-#     else:
-#         word = f"Xin chọn màu của {THEME[self.language][kind]}"
-#     return word
 #----------------------------------------------------------------  
 def open_file_dialog(self):
     select_folder = LABELS[self.language]["SelectFolder"]
@@ -148,31 +130,18 @@ def read_content(file_path,tag= None):
             lines = [line.rstrip("\n") for line in f]
             
     return "\n".join(lines)
-#----------------------------------------------------------------
 
-def resource_path(relative_path):
-    
-    if hasattr(sys, "_MEIPASS"):
-        base_path = sys._MEIPASS
-    else:
-        base_path = os.path.dirname(os.path.abspath(__file__))
-
-    return os.path.join(base_path, relative_path)
 #----------------------------------------------------------------
 def show_guide(self):
-    from pathlib import Path
-    # guide_path = os.path.join(os.path.dirname(__file__),"resources","lang", GUIDE_PATH)
-    # guide_path = resource_path(
-    #     os.path.join("resources", "lang", GUIDE_PATH)
-    # )
-    # guide_path = path_normalized(guide_path)
-    guide_path = Path(resource_path("resources")) / "lang" / GUIDE_PATH
+
+    guide_path = Path(resource_path("resources")) / "lang" / GUIDE_FILE
     # Read guidance content based on language tag
     tag = (self.language[0].upper() if self.language else "E")
     content = read_content(guide_path,tag)
     # Preview content in a dialog
     dialog = QDialog()
     dialog.setWindowTitle(GUIDE_TITLE[self.language])
+    dialog.setWindowIcon(QIcon(str(self.icon)))
     dialog.resize(600, 400)
 
     layout = QVBoxLayout(dialog)
